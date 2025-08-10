@@ -1,4 +1,4 @@
-name: "HAOS Kiosk Display"
+name: "HAOS Kiosk Display - Mod"
 description: >
   Start X server and browser on local HAOS server and display dashboards in kiosk mode (Jeff Kosowsky)
 version: "0.9.9"
