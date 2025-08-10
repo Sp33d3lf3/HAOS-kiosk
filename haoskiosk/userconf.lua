@@ -28,6 +28,8 @@ local webview = require "webview"
 local settings = require "settings"
 local modes = package.loaded["modes"]
 
+settings.override_setting("enable_write_console_messages_to_stdout", true)
+
 -- -----------------------------------------------------------------------
 -- Configurable variables
 local new_escape_key = "<Control-Mod1-Escape>" -- Ctl-Alt-Esc
