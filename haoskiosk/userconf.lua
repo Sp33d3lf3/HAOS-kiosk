@@ -157,7 +157,7 @@ webview.add_signal("init", function(view)
 				    const usernameField = document.querySelector('input[autocomplete="username"]');
 				    const passwordField = document.querySelector('input[autocomplete="current-password"]');
 				    const haCheckbox = document.querySelector('ha-checkbox');
-				    const submitButton = document.querySelector('ha-button');
+				    const submitButton = document.querySelector('ha-button, mwc-button');
 
                     if (usernameField && passwordField && submitButton) {
                         usernameField.value = '%s';
