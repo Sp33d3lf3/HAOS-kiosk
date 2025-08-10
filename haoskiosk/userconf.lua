@@ -150,10 +150,12 @@ webview.add_signal("init", function(view)
             -- JavaScript to auto-fill and submit the login form
             local js_auto_login = string.format([[
                 setTimeout(function() {
-		    const usernameField = document.querySelector('input[autocomplete="username"]');
-		    const passwordField = document.querySelector('input[autocomplete="current-password"]');
-		    const haCheckbox = document.querySelector('ha-checkbox');
-		    const submitButton = document.querySelector('ha-button');
+					console.log('setTimeOut triggert');
+
+				    const usernameField = document.querySelector('input[autocomplete="username"]');
+				    const passwordField = document.querySelector('input[autocomplete="current-password"]');
+				    const haCheckbox = document.querySelector('ha-checkbox');
+				    const submitButton = document.querySelector('ha-button');
 
                     if (usernameField && passwordField && submitButton) {
                         usernameField.value = '%s';
@@ -165,15 +167,15 @@ webview.add_signal("init", function(view)
                             username: !!usernameField,
                             password: !!passwordField,
                             submit: !!submitButton
-			});
-		    }
+						});
+		    		}
 
-		    if (haCheckbox) {
-		        haCheckbox.setAttribute('checked', '');
-			haCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
-		    }
+			    	if (haCheckbox) {
+			        	haCheckbox.setAttribute('checked', '');
+						haCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
+			    	}
 
-                    submitButton.click();
+                	submitButton.click();
 
                 }, %d);
             ]], single_quote_escape(username), single_quote_escape(password), login_delay * 1000)
