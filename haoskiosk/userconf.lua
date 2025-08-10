@@ -124,7 +124,7 @@ webview.add_signal("init", function(view)
     -- Listen for page load events
     view:add_signal("load-status", function(v, status)
         if status ~= "finished" then return end  -- Only proceed when the page is fully loaded
-        msg.info("URI: %s", v.uri) -- DEBUG
+        msg.info("URI-Test: %s", v.uri) -- DEBUG
 
         -- We want to start in passthrough mode (i.e. not normal command mode) -- 4 potential options for doing this
         -- Option#1 Sets passthrough mode for the first window (or all initial windows if using xdotool line)
