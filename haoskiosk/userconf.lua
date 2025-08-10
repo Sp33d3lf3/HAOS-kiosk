@@ -28,7 +28,7 @@ local webview = require "webview"
 local settings = require "settings"
 local modes = package.loaded["modes"]
 
-settings.override_setting("enable_write_console_messages_to_stdout", true)
+settings.set_setting("webview.enable_write_console_messages_to_stdout", true)
 
 -- -----------------------------------------------------------------------
 -- Configurable variables
@@ -117,6 +117,8 @@ local first_window = true
 local ha_settings_applied = setmetatable({}, { __mode = "k" }) -- Flag to track if HA settings have already been applied in this session
 
 webview.add_signal("init", function(view)
+	settings.override_setting_for_view(view, "webview.enable_write_console_messages_to_stdout", true)
+		
     ha_settings_applied[view] = false  -- Set per view
 
     -- Listen for page load events
