@@ -117,7 +117,7 @@ local first_window = true
 local ha_settings_applied = setmetatable({}, { __mode = "k" }) -- Flag to track if HA settings have already been applied in this session
 
 webview.add_signal("init", function(view)
-	settings.override_setting_for_view(view, "webview.enable_write_console_messages_to_stdout", true)
+	--settings.override_setting_for_view(view, "webview.enable_write_console_messages_to_stdout", true)
 		
     ha_settings_applied[view] = false  -- Set per view
 
